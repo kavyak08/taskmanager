@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>edit task</title>
+</head>
+<body>
+<div style="text-align:center;">
+    <h2>TASK</h2>
+
+    <form method="POST" action="{% url 'update_task' task_id=task.id %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Student Name" name="student" value="{{task.Student}}"><br><br>
+        <input type="text" placeholder="Batch" name="batch" value="{{task.Batch}}"><br><br>
+        <input type="text" placeholder="Tutor Name" name="tutor" value="{{task.Tutor}}"><br><br>
+        <input type="text" placeholder="Task Title" name="task" value="{{task.Task_title}}"><br><br>
+        <textarea placeholder="Description" name="desc">{{task.Description}}</textarea><br><br>
+        <button>UPDATE</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

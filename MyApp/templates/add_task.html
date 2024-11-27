@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add task</title>
+</head>
+<body>
+<div style="text-align:center;">
+    <h2>TASK</h2>
+
+    <form method="POST" action="{% url 'save_task' %}">
+        {% csrf_token %}
+        <input type="text" placeholder="Student Name" name="student"><br><br>
+        <input type="text" placeholder="Batch" name="batch"><br><br>
+        <input type="text" placeholder="Tutor Name" name="tutor"><br><br>
+        <input type="text" placeholder="Task Title" name="task"><br><br>
+        <textarea placeholder="Description" name="desc"></textarea><br><br>
+        <button>SUBMIT</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

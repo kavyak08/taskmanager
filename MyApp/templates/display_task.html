@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>displaytask</title>
+</head>
+<body>
+<h2 style="margin-left:650px;">USER DETAILS</h2>
+<table style="width:100%;text-align:center;">
+    <tr>
+     <th>Student</th>
+    <th>Batch</th>
+    <th>Tutor</th>
+    <th>Task</th>
+    <th>Description</th>
+    </tr>
+
+{% for i in data %}
+    <tr>
+        <td>{{i.Student}}</td>
+        <td>{{i.Batch}}</td>
+        <td>{{i.Tutor}}</td>
+        <td>{{i.Task_title}}</td>
+        <td>{{i.Description}}</td>
+
+        <td>
+            <a href="{% url 'edit_task' task_id=i.id %}">
+                <button>EDIT</button>
+            </a>
+        </td>
+
+        <td>
+            <a href="{% url 'delete_task' task_id=i.id %}">
+                <button>DELETE</button>
+            </a>
+        </td>
+
+
+
+    </tr>
+ {% endfor %}
+</table>
+
+</body>
+</html>
